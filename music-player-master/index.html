@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       href="resources/favicon.ico"
@@ -12,8 +11,6 @@
     />
 
     <title>Music Player | devChallenges.io</title>
-
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
       * {
@@ -148,27 +145,26 @@
   <body>
   <div class="container">
     <div class="music-player">
-      <img class="cover-photo" src="./resources/cover-1.jpg" alt="cover-photo">
-      <span class="music-title">Forest Lullaby</span>
-      <p class="artist">Lesfm</p>
+      <img id="music-cover" class="cover-photo" src="./resources/cover-1.jpg" alt="cover-photo">
+      <span id="music-title" class="music-title"></span>
+      <p id="artist" class="artist"></p>
 
       <div class="player">
         <div class="time">
-          <div class="music-time">00:39</div>
-          <div class="music-time">03:45</div>
+          <div class="music-time" id="current-time">00:00</div>
+          <div class="music-time" id="song-duration">00:00</div>
         </div>
-        <progress class="progress-bar" id="file" value="32" max="100"> 32% </progress>
+        <progress id="progress-bar" class="progress-bar" id="file" value="0" max="100"></progress>
+        <audio id="audio" src="./resources/forest-lullaby-110624.mp3"></audio>
       </div>
 
       <div class="controls">
-        <img src="./resources/Stop_and_play_fill-1.svg" alt="">
-        <div class="circle">
-          <img class="play-img" src="./resources/Play_fill.svg" alt="">
-        <img class="pause-img" src="./resources/Pause_fill.svg" alt="">
+        <img id="previous-music" src="./resources/Stop_and_play_fill-1.svg" alt="">
+        <div class="circle" id="play">
+          <img id="play-image" class="play-img" src="./resources/Play_fill.svg" alt="">
+        <img id="pause-image" class="pause-img" src="./resources/Pause_fill.svg" alt="">
         </div>
-     
-
-        <img src="./resources/Stop_and_play_fill.svg" alt="">
+        <img id="next-music" src="./resources/Stop_and_play_fill.svg" alt="">
       </div>
     </div>
     
@@ -180,5 +176,7 @@
         >devChallenges.io</a
       >.
     </div>
+    <script src="main.js"></script>
+
   </body>
 </html>
